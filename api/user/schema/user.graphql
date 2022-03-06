@@ -9,7 +9,7 @@ const userSchema = gql `
 
   type Query {
     users: [User]
-    primeroUsers: User
+    primeiroUsers: User
   }
 `
 module.exports = userSchema
