@@ -1,22 +1,9 @@
 const { ApolloServer} = require('apollo-server');
 const userSchema = require('./user/schema/user.graphql')
-
-
-const users = [
-  {
-    nome: 'Valente',
-    ativo: true
-  },
-  {
-    nome: 'Teodoro',
-    ativo: false
-  },
-]
-
+const userResolvers = require('./user/resolvers/userResolvers.js')
 
 const typeDefs = [userSchema]
-const resolvers = {}
-
+const resolvers = [userResolvers]
 const server = new ApolloServer({ typeDefs, resolvers })
 
 server.listen().then(({ url }) => {
